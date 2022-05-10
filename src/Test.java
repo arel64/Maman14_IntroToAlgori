@@ -5,6 +5,14 @@ public class Test {
     static Random rand = new Random();
     static Scanner in = new Scanner(System.in);
 
+    public static long[][] CompareExtractsTimes(int n,int k,int times)throws Exception{
+        long[][] counts = new long[times][2];
+        for(int i=0;i<times;i++){
+            counts[i]=CompareExtract(n,k,false);
+        }
+        return counts;
+    }
+
     public static long[] CompareExtract(int n,int k, boolean verbose) throws Exception{
 
         int[] heapArray   = new int[n+1];

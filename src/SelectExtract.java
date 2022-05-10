@@ -11,8 +11,7 @@ public class SelectExtract extends ComparisonCount{
     public int[] extractMin(int []arr,int k) throws Exception{
         if(k>arr.length) throw new Exception(UNDERFLOW);
         int index = select(arr,0,arr.length-1,k);
-      //  qs.partition(arr,0,arr.length-1,index);
-        qs.quickSort(arr,0,index);
+        qs.quickSort(arr,0,index-1);
         return Arrays.stream(arr,0,k).toArray();
 
     }
