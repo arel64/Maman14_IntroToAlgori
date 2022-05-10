@@ -4,9 +4,8 @@ public class Execute {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
-        Test.CompareExtractsTimes(500,10,2000);
+        //Test.CompareExtractsTimes(500,10,2000);
 
-        /*
         int n,k;
         boolean state;
         n = Test.receiveInteger("Please submit array size (n): ");
@@ -27,7 +26,7 @@ public class Execute {
         }else{
             //Computer Generated
             Test.CompareExtract(n,k,true);
-        }*/
+        }
     }
 
 }
