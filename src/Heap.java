@@ -32,6 +32,8 @@ public class Heap extends ComparisonCount{
     }
 
     public void minHeapify(int i){
+
+        //TODO::There is a bug here.. either in counting or execution of unnccecary actions
         if(!(i<= heapSize)){
             return;
         }
