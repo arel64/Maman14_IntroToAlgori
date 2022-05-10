@@ -1,3 +1,6 @@
+/**
+ * Basic Counting class, will be overridden by Extraction algorithms as necessary
+ */
 public class ComparisonCount implements Countable{
     public ComparisonCount(){
         count=0;
