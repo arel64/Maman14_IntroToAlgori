@@ -2,6 +2,8 @@ import java.util.*;
 
 /**
  * Main
+ * @author  Arel Sharon
+ * @since  11/05/2022
  */
 public class Execute {
     static Scanner in = new Scanner(System.in);

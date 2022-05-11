@@ -1,5 +1,11 @@
 import java.util.Arrays;
 
+/**
+ * Algorithm 2
+ * Use select to split the elements to k smallest and quicksort them
+ * @author  Arel Sharon
+ * @since  11/05/2022
+ */
 public class SelectExtract extends ComparisonCount{
 
     public final static String UNDERFLOW = "SELECT UnderFlow";

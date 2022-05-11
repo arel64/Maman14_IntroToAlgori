@@ -2,6 +2,8 @@ import java.util.Random;
 
 /**
  * An Implementation of Q-S Algorithm
+ * @author  Arel Sharon
+ * @since  11/05/2022
  */
 public class QuickSort extends ComparisonCount{
     static Random rand = new Random();

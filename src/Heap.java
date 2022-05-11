@@ -1,5 +1,7 @@
 /**
  * This class implements Minimum Heap
+ * @author  Arel Sharon
+ * @since  11/05/2022
  */
 public class Heap extends ComparisonCount{
 
