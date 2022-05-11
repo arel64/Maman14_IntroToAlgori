@@ -128,7 +128,7 @@ public class Test {
     public static int receiveInteger(String msg){
 
         String temp;
-        boolean cast=true;// while this is false no valid value was given.
+        boolean cast;// while this is false no valid value was given.
         int num=0;
 
 
@@ -148,6 +148,7 @@ public class Test {
                 if(num<0){
                     throw new InputMismatchException();
                 }
+                cast =true;
             }catch (NumberFormatException e){
                 cast=false;
                 System.out.println("Please submit a number");
@@ -243,6 +244,23 @@ public class Test {
         return true;
     }
 
+    /**
+     * This average results from multiple tests
+     * @param testResult array which contains results from all tests to average
+     * @return array with the average count of both algorithms
+     */
+    public static long[] averageTesting(long[][]testResult){
+        long [] avg = new long[2];
+        long tempHeap=0,tempSelect = 0;
+        for(int i = 0;i<testResult.length;i++){
+            tempHeap += testResult[i][0];
+            tempSelect += testResult[i][1];
+        }
+        tempHeap/=testResult.length;
+        tempSelect/=testResult.length;
+        return new long[]{tempHeap,tempSelect};
+
+    }
 
 
 }
