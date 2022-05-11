@@ -38,7 +38,7 @@ public class SelectExtract extends ComparisonCount{
             select will also use partition to place smaller than k'th smallest element
             to the "left" of its index in the array
          */
-        int index = select(arr,0,arr.length-1,k);
+        int index = randSelect(arr,0,arr.length-1,k);
 
         /*
             Sort all elements to the left of the k'th smallest array.
@@ -49,6 +49,7 @@ public class SelectExtract extends ComparisonCount{
         return Arrays.stream(arr,0,k).toArray();
 
     }
+
     /**
      * Select the k'th smallest element
      * @param arr array to search
@@ -58,7 +59,32 @@ public class SelectExtract extends ComparisonCount{
      * @apiNote See page 154
      * @return k'th smallest element in array
      */
-    public int select(int [] arr,int p,int r, int i){
+    public int select(int [] arr,int p,int r, int i) {
+        return _select(arr,p,r,i,false);
+    }
+
+    /**
+     * Select the k'th smallest element with random pivot
+     * @param arr array to search
+     * @param p start of range inclusive
+     * @param r end of range inclusive
+     * @param i i'th smallest element to find
+     * @apiNote See page 154
+     * @return k'th smallest element in array
+     */
+    public int randSelect(int [] arr,int p,int r, int i) {
+        return _select(arr,p,r,i,true);
+    }
+    /**
+     * Select the k'th smallest element with last cell as pivot
+     * @param arr array to search
+     * @param p start of range inclusive
+     * @param r end of range inclusive
+     * @param i i'th smallest element to find
+     * @apiNote See page 154
+     * @return k'th smallest element in array
+     */
+    private int _select(int [] arr,int p,int r, int i,boolean rand){
         /*
             If the range if of 1 element return it.
          */
@@ -71,7 +97,12 @@ public class SelectExtract extends ComparisonCount{
         /*
             Partition the array
          */
-        q = qs.partition(arr,p,r);
+        if(rand){
+            q = qs.randPartition(arr,p,r);
+        }else{
+            q = qs.partition(arr,p,r);
+        }
+
 
         int k = q - p + 1;
         //If first element in range is the desired element return it.

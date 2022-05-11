@@ -23,7 +23,7 @@ public class QuickSort extends ComparisonCount{
      * @apiNote see page 122
      * @return partitioned array
      */
-    public int partition(int arr[],int p,int r){
+    private int _partition(int arr[],int p,int r){
         /*
             This function is documented in the book
          */
@@ -39,7 +39,30 @@ public class QuickSort extends ComparisonCount{
         swap(arr,i+1,r);
         return i+1;
     }
-
+    /**
+     * Partition the array into 3 parts using r as pivot
+     * @param arr array to partition
+     * @param p start of range inclusive
+     * @param r end of range inclusive
+     * @apiNote see page 122
+     * @return partitioned array
+     */
+    public int partition(int arr[],int p,int r) {
+        return _partition(arr,p,r);
+    }
+    /**
+     * Partition the array into 3 parts using random number in range as pivot.
+     * @param arr array to partition
+     * @param p start of range inclusive
+     * @param r end of range inclusive
+     * @apiNote see page 122
+     * @return partitioned array
+     */
+    public int randPartition(int arr[],int p, int r){
+        int pivot = rand.nextInt(r-p)+p;
+        swap(arr,pivot,r);
+        return _partition(arr,p,r);
+    }
     /**
      * Quicksort the array
      * @param arr array to quicksort
